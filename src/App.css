@@ -1,5 +1,8 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  width: 31vw;
   border: 2px solid white;
   border-radius: 14px;
-  padding: 0 15px 15px 15px;
+  padding: 0 100px 20px 100px;
 }
