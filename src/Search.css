@@ -3,13 +3,19 @@
 .searchContainer {
   display: flex;
   gap: 10px;
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 4px;
 }
 .searchBox {
-  border: 2px solid white;
-  border-radius: 6px;
   padding: 15px;
   flex-grow: 1;
+  outline: none;
+  border: none;
+  background: none;
 }
 .searchButton {
   padding: 0 20px;
+  background-color: white;
+  color: black;
 }
