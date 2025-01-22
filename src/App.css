@@ -1,8 +1,10 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+
 .container {
   display: flex;
   flex-direction: column;
   width: 31vw;
   border: 2px solid white;
   border-radius: 14px;
-  padding: 0 100px 20px 100px;
+  padding: 0 100px 40px 100px;
 }

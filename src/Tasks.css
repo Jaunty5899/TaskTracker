@@ -1,7 +1,19 @@
-.taskContainer {
+.task {
   display: flex;
   gap: 10px;
   padding: 5px 0;
   border-bottom: 1px solid white;
   font-size: larger;
+  align-items: center;
+  justify-content: space-between;
+}
+.task > label {
+  display: flex;
+  gap: 10px;
+}
+input[type="checkbox"] {
+  width: 18px;
+}
+.checked {
+  text-decoration: line-through 2px;
 }

@@ -8,7 +8,7 @@ export default function Search() {
         type="text"
         placeholder="Start writing and press enter to create task"
       />
-      <button className="searchButton material-symbols-outlined">
+      <button className="searchButton material-icons">
         subdirectory_arrow_left
       </button>
     </div>
