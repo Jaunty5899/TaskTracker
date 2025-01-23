@@ -18,13 +18,23 @@ function App() {
     !data.includes(item) && setArray(data.unshift(item));
   }
 
+  function RemoveData(index) {
+    data.splice(index, 1);
+    setArray(data);
+  }
+
   return (
     <div className="container">
       <h2>Task Tracker</h2>
-      <Search Data={AddData} />
+      <Search addData={AddData} />
       <div className="tasksContainer">
-        {data.map((item) => (
-          <Tasks Data={item} />
+        {data.map((item, index) => (
+          <Tasks
+            Data={item}
+            removeData={RemoveData}
+            Index={index}
+            key={index}
+          />
         ))}
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Search.css";
 
-export default function Search({ Data }) {
+export default function Search({ addData }) {
   const [task, setTask] = useState();
   return (
     <div className="searchContainer">
@@ -13,7 +13,7 @@ export default function Search({ Data }) {
       />
       <button
         className="searchButton material-icons"
-        onClick={() => task && Data(task)}
+        onClick={() => task && addData(task)}
       >
         subdirectory_arrow_left
       </button>

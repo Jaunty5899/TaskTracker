@@ -9,6 +9,7 @@
 }
 .task > label {
   display: flex;
+  flex-grow: 1;
   gap: 10px;
 }
 input[type="checkbox"] {
