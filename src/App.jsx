@@ -1,6 +1,7 @@
 import "./App.css";
 import Search from "./Search";
 import Tasks from "./Tasks";
+import { useState } from "react";
 
 const data = [
   "Breakfast: Oatmeal with berries",
@@ -11,10 +12,16 @@ const data = [
 ];
 
 function App() {
+  const [array, setArray] = useState(data);
+
+  function AddData(item) {
+    !data.includes(item) && setArray(data.unshift(item));
+  }
+
   return (
     <div className="container">
       <h2>Task Tracker</h2>
-      <Search />
+      <Search Data={AddData} />
       <div className="tasksContainer">
         {data.map((item) => (
           <Tasks Data={item} />
