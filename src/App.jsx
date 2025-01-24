@@ -15,12 +15,12 @@ function App() {
   const [array, setArray] = useState(data);
 
   function AddData(item) {
-    !data.includes(item) && setArray(data.unshift(item));
+    !array.includes(item) && setArray([item, ...array]);
   }
 
-  function RemoveData(index) {
-    data.splice(index, 1);
-    setArray(data);
+  function RemoveData(item) {
+    const d = array.filter((e) => e != item);
+    setArray(d);
   }
 
   return (
@@ -28,13 +28,8 @@ function App() {
       <h2>Task Tracker</h2>
       <Search addData={AddData} />
       <div className="tasksContainer">
-        {data.map((item, index) => (
-          <Tasks
-            Data={item}
-            removeData={RemoveData}
-            Index={index}
-            key={index}
-          />
+        {array.map((item, index) => (
+          <Tasks Data={item} removeData={RemoveData} key={index} />
         ))}
       </div>
     </div>

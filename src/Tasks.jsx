@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Tasks.css";
 
-export default function Tasks({ Data, removeData, Index }) {
+export default function Tasks({ Data, removeData }) {
   const [state, setState] = useState();
 
   return (
@@ -10,7 +10,7 @@ export default function Tasks({ Data, removeData, Index }) {
         <input type="checkbox" onClick={(e) => setState(e.target.checked)} />
         {Data}
       </label>
-      <span className="material-icons" onClick={() => removeData(Index)}>
+      <span className="material-icons" onClick={() => removeData(Data)}>
         delete
       </span>
     </div>
