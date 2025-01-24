@@ -19,8 +19,7 @@ function App() {
   }
 
   function RemoveData(item) {
-    const d = array.filter((e) => e != item);
-    setArray(d);
+    setArray(array.filter((e) => e != item));
   }
 
   return (
