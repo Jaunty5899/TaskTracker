@@ -13,7 +13,7 @@ export default function Search({ addData }) {
       />
       <button
         className="searchButton material-icons"
-        onClick={() => task && addData(task)}
+        onClick={() => task && addData({ title: task })}
       >
         subdirectory_arrow_left
       </button>
