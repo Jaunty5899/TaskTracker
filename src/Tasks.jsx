@@ -10,7 +10,10 @@ export default function Tasks({ Data, removeData }) {
         <input type="checkbox" onClick={(e) => setState(e.target.checked)} />
         {Data.title}
       </label>
-      <span className="material-icons" onClick={() => removeData(Data)}>
+      <span
+        className="material-icons"
+        onClick={() => removeData({ id: Data.id })}
+      >
         delete
       </span>
     </div>

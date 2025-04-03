@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const apiReadLink = "http://localhost:3000/todos";
 const apiAddLink = "http://localhost:3000/addTodo";
-const apiRemoveLink = "http://localhost:3000/removeTodo";
+const apiDeleteLink = "http://localhost:3000/DeleteTodo";
 const apiCompleteLink = "http://localhost:3000/completeTodo";
 
 function App() {
@@ -33,19 +33,24 @@ function App() {
     const jsonResponse = await response.json();
   };
 
-  const removeData = async () => {
-    const response = await fetch(apiRemoveLink);
+  const removeData = async (data) => {
+    const response = await fetch(apiDeleteLink, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
     const jsonResponse = await response.json();
-    setArray(jsonResponse.todos);
   };
 
   // function AddData(item) {
   //   !array.includes(item) && setArray([item, ...array]);
   // }
 
-  function RemoveData(item) {
-    setArray(array.filter((e) => e != item));
-  }
+  // function RemoveData(item) {
+  //   setArray(array.filter((e) => e != item));
+  // }
 
   return (
     <div className="container">
@@ -53,7 +58,7 @@ function App() {
       <Search addData={addData} />
       <div className="tasksContainer">
         {array.map((item) => (
-          <Tasks Data={item} removeData={RemoveData} key={item.id} />
+          <Tasks Data={item} removeData={removeData} key={item.id} />
         ))}
       </div>
     </div>
