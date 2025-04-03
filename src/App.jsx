@@ -44,6 +44,17 @@ function App() {
     const jsonResponse = await response.json();
   };
 
+  const completeTask = async (data) => {
+    const response = await fetch(apiCompleteLink, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const jsonResponse = await response.json();
+  };
+
   // function AddData(item) {
   //   !array.includes(item) && setArray([item, ...array]);
   // }
@@ -58,7 +69,12 @@ function App() {
       <Search addData={addData} />
       <div className="tasksContainer">
         {array.map((item) => (
-          <Tasks Data={item} removeData={removeData} key={item.id} />
+          <Tasks
+            Data={item}
+            removeData={removeData}
+            completeTask={completeTask}
+            key={item.id}
+          />
         ))}
       </div>
     </div>

@@ -1,13 +1,19 @@
 import { useState } from "react";
 import "./Tasks.css";
 
-export default function Tasks({ Data, removeData }) {
+export default function Tasks({ Data, removeData, completeTask }) {
   const [state, setState] = useState();
 
   return (
     <div className="task">
-      <label className={state ? "checked" : undefined}>
-        <input type="checkbox" onClick={(e) => setState(e.target.checked)} />
+      <label className={Data.completed ? "checked" : undefined}>
+        <input
+          type="checkbox"
+          checked={Data.completed || false}
+          onClick={() => {
+            completeTask({ id: Data.id });
+          }}
+        />
         {Data.title}
       </label>
       <span
